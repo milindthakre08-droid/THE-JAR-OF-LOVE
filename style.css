@@ -18,7 +18,7 @@ body {
   background-size: cover;
 }
 
-/* Container keeps center alignment */
+/* Center container */
 .container {
   display: flex;
   justify-content: center;
@@ -27,17 +27,20 @@ body {
 
 /* Jar */
 #jar {
-  width: 18vw;          /* responsive size */
-  min-width: 140px;     /* for small phones */
-  max-width: 260px;     /* for big screens */
+  width: 18vw;
+  min-width: 140px;
+  max-width: 260px;
+
+  cursor: pointer;
+
   animation: float 3s ease-in-out infinite;
 }
 
 /* Floating animation */
 @keyframes float {
-  0% { transform: translateY(0px); }
+  0% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+  100% { transform: translateY(0); }
 }
 
 /* Music button */
@@ -50,16 +53,14 @@ body {
   border: none;
   border-radius: 20px;
 
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255,255,255,0.25);
   color: white;
 
   backdrop-filter: blur(6px);
-  font-size: 14px;
-
   cursor: pointer;
 }
 
-/* 📱 Mobile tweaks */
+/* Mobile */
 @media (max-width: 600px) {
   #jar {
     width: 45vw;
