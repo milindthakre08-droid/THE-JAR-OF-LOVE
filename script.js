@@ -1,8 +1,14 @@
-function playMusic() {
-  document.getElementById("bgmusic").play();
+function toggleMusic() {
+  const music = document.getElementById("bgmusic");
+
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
 }
 
-/* HEART EXPLOSION */
+/* HEARTS */
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
@@ -13,15 +19,12 @@ function createHeart() {
 
   document.body.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 2000);
+  setTimeout(() => heart.remove(), 2000);
 }
 
-/* AUTO HEART BURST */
 function heartBurst() {
   for (let i = 0; i < 15; i++) {
-    setTimeout(createHeart, i * 80);
+    setTimeout(createHeart, i * 70);
   }
 }
 
@@ -31,17 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const card = document.getElementById("card");
   const text = document.getElementById("reasonText");
 
-  /* Try autoplay music */
   const music = document.getElementById("bgmusic");
+
+  /* autoplay attempt */
   music.play().catch(() => {
-    console.log("Autoplay blocked, user must click button");
+    console.log("Autoplay blocked");
   });
 
   btn.addEventListener("click", () => {
     const random = reasons[Math.floor(Math.random() * reasons.length)];
 
     text.innerText = "💖 " + random;
+
     card.classList.remove("hidden");
+    card.classList.remove("pop");
+    void card.offsetWidth; // restart animation
+    card.classList.add("pop");
 
     heartBurst();
   });
