@@ -1,168 +1,26 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Jar Of Love ❤️</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Jar 💜</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="hearts"></div>
+  <!-- Music -->
+  <audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
 
-<audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+  <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
 
-<button id="musicBtn">
-    🎵
-</button>
+  <!-- Jar -->
+  <div class="container">
+    <img src="jar.png" id="jar">
+  </div>
 
-<section id="welcomeScreen">
-
-```
-<div class="glass-card">
-
-    <div class="jar-container">
-
-        <div class="jar">
-
-            <div class="lid"></div>
-
-            <div class="face">
-
-                <div class="eyes">
-
-                    <div class="eye"></div>
-                    <div class="eye"></div>
-
-                </div>
-
-                <div class="mouth"></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <h1>Hey Lakku! 💖</h1>
-
-    <p id="jarSpeech">
-
-        I'm the Jar of Love.
-
-        I've been collecting reasons why Milind loves you.
-
-    </p>
-
-    <button id="startBtn">
-        Open My Secret ✨
-    </button>
-
-</div>
-```
-
-</section>
-
-<section id="letterScreen" class="hidden">
-
-```
-<div class="glass-card letter">
-
-    <h1>Dear Lakku ❤️</h1>
-
-    <p>
-        I thought about flowers.
-    </p>
-
-    <p>
-        I thought about gifts.
-    </p>
-
-    <p>
-        Then I realized something.
-    </p>
-
-    <p>
-        The best gift I could ever give you
-        is a reminder of how loved you are.
-    </p>
-
-    <p>
-        So I collected reasons.
-    </p>
-
-    <p>
-        Thousands of them.
-    </p>
-
-    <p>
-        And somehow...
-    </p>
-
-    <p>
-        It still doesn't feel enough.
-    </p>
-
-    <h2>
-        Love,<br>
-        Milind ❤️
-    </h2>
-
-    <button id="openJarBtn">
-        Open The Jar 💕
-    </button>
-
-</div>
-```
-
-</section>
-
-<section id="reasonScreen" class="hidden">
-
-```
-<div class="glass-card">
-
-    <h1>✨ Secret Love Reason ✨</h1>
-
-    <div id="reasonBox">
-
-        <h3 id="reasonNumber">
-            Reason #1
-        </h3>
-
-        <p id="reasonText">
-
-            I love your beautiful eyes.
-
-        </p>
-
-    </div>
-
-    <button id="nextReasonBtn">
-
-        Reveal Another Reason ❤️
-
-    </button>
-
-</div>
-```
-
-</section>
-
-<script src="reasons.js"></script>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
