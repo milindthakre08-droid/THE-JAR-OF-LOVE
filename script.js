@@ -1,15 +1,16 @@
 function playMusic() {
-  const music = document.getElementById("bgmusic");
-  music.play();
+  document.getElementById("bgmusic").play();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const jar = document.getElementById("jar");
+  const btn = document.getElementById("revealBtn");
+  const card = document.getElementById("card");
+  const text = document.getElementById("reasonText");
 
-  jar.addEventListener("click", () => {
-    const randomReason =
-      reasons[Math.floor(Math.random() * reasons.length)];
+  btn.addEventListener("click", () => {
+    const random = reasons[Math.floor(Math.random() * reasons.length)];
 
-    alert("💖 " + randomReason);
+    text.innerText = "💖 " + random;
+    card.classList.remove("hidden");
   });
 });
