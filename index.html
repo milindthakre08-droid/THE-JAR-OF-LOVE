@@ -14,28 +14,34 @@
     <source src="music.mp3" type="audio/mp3">
   </audio>
 
-  <!-- fallback play button (needed for mobile restrictions) -->
+  <!-- Fallback music button -->
   <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
 
   <!-- Jar -->
   <img src="jar.png" id="jar" alt="jar">
 
-  <!-- Center -->
+  <!-- 💌 CENTER MESSAGE -->
   <div class="center-box">
-    <h1>💌 A Message For You</h1>
-    <p>Some feelings don’t need explanation… just heart 💜</p>
+    <h1>💌 A Gift For You</h1>
+
+    <p>
+      This is a gift from Milind to Lakku 💜<br>
+      You can open it every day… and remember me 💭✨
+    </p>
 
     <button id="revealBtn">Reveal a Reason 💖</button>
 
     <!-- Card -->
     <div id="card" class="hidden">
       <p id="reasonText"></p>
+
       <p class="footer-text">
         These are just glimpse of my love to you 💖
       </p>
     </div>
   </div>
 
+  <!-- Heart container -->
   <div id="heart-container"></div>
 
   <script src="reasons.js"></script>
