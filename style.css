@@ -9,38 +9,9 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   background: url("background.png") no-repeat center center;
   background-size: cover;
-}
-
-/* Center container */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Jar */
-#jar {
-  width: 18vw;
-  min-width: 140px;
-  max-width: 260px;
-
-  cursor: pointer;
-
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Floating animation */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+  font-family: Arial, sans-serif;
 }
 
 /* Music button */
@@ -48,26 +19,82 @@ body {
   position: absolute;
   top: 15px;
   left: 15px;
-
   padding: 10px 14px;
   border: none;
   border-radius: 20px;
-
   background: rgba(255,255,255,0.25);
   color: white;
-
   backdrop-filter: blur(6px);
   cursor: pointer;
+}
+
+/* Jar on LEFT */
+#jar {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 160px;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Center box */
+.center-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  color: white;
+  background: rgba(0,0,0,0.3);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  width: 80%;
+  max-width: 400px;
+}
+
+/* Button */
+#revealBtn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: pink;
+  color: black;
+  font-weight: bold;
+}
+
+/* Card */
+#card {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  background: white;
+  color: black;
+  animation: pop 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   #jar {
-    width: 45vw;
-  }
-
-  .music-btn {
-    font-size: 12px;
-    padding: 8px 12px;
+    width: 120px;
   }
 }
