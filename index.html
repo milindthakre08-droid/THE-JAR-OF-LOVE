@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jar of Love ❤️</title>
+
+```
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+```
+
+</head>
+<body>
+
+```
+<!-- Floating Hearts -->
+<div id="hearts-container"></div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Music Toggle -->
+<button id="musicBtn" class="music-btn">
+    🎵
+</button>
+
+<!-- Main Container -->
+<div class="main-container">
+
+    <!-- Jar Section -->
+    <div id="jarScene" class="jar-scene">
+
+        <div class="speech-bubble">
+            <p id="jarText">
+                Hey! I'm the Jar of Love! 💖
+            </p>
+        </div>
+
+        <div class="jar-wrapper">
+
+            <div class="jar-hand left-hand"></div>
+
+            <div id="jar" class="jar">
+
+                <div class="jar-lid"></div>
+
+                <div class="jar-face">
+
+                    <div class="eyes">
+                        <div class="eye left-eye">
+                            <div class="pupil"></div>
+                        </div>
+
+                        <div class="eye right-eye">
+                            <div class="pupil"></div>
+                        </div>
+                    </div>
+
+                    <div class="mouth"></div>
+
+                    <div class="blush blush-left"></div>
+                    <div class="blush blush-right"></div>
+
+                </div>
+
+            </div>
+
+            <div class="jar-hand right-hand"></div>
+
+        </div>
+
+        <button id="startBtn" class="love-btn">
+            YES ❤️
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Intro Modal -->
+<div id="introModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2>Dear Lakku ❤️</h2>
+
+        <p>
+            I thought about flowers.
+        </p>
+
+        <p>
+            I thought about gifts.
+        </p>
+
+        <p>
+            Then I realized something...
+        </p>
+
+        <p>
+            The best gift I could give you is a reminder
+            of how loved you are.
+        </p>
+
+        <p>
+            So I started collecting reasons.
+        </p>
+
+        <p>
+            Some are big.
+            Some are tiny.
+            Some are silly.
+            Some are impossible to explain.
+        </p>
+
+        <p>
+            But every single one is true.
+        </p>
+
+        <p>
+            This little jar contains thousands of reasons
+            why I love you.
+        </p>
+
+        <p>
+            And somehow...
+        </p>
+
+        <p>
+            It still doesn't feel like enough.
+        </p>
+
+        <h3>
+            Love,<br>
+            Milind ❤️
+        </h3>
+
+        <button id="openJarBtn" class="love-btn">
+            Open The Jar ✨
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Scratch Card Section -->
+<section id="scratchSection" class="hidden">
+
+    <div class="scratch-card-container">
+
+        <h2>✨ Secret Love Reason ✨</h2>
+
+        <div class="scratch-wrapper">
+
+            <div id="reasonCard" class="reason-card">
+
+                <h3 id="reasonNumber">
+                    Reason #1
+                </h3>
+
+                <p id="reasonText">
+                    I love you because your smile makes my day better.
+                </p>
+
+            </div>
+
+            <canvas id="scratchCanvas"></canvas>
+
+            <div class="scratch-overlay">
+                Reveal A Reason ❤️
+            </div>
+
+        </div>
+
+        <button id="nextReasonBtn" class="love-btn">
+            Give Me Another Reason 💖
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Cute Footer -->
+<footer>
+
+    <p>
+        Made with endless love for Lakku ❤️
+    </p>
+
+</footer>
+
+<script src="reasons.js"></script>
+<script src="script.js"></script>
+```
+
+</body>
+</html>
