@@ -16,12 +16,22 @@
 
   <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
 
-  <!-- Jar -->
-  <div class="container">
-    <img src="jar.png" id="jar" alt="jar">
+  <!-- Left Jar -->
+  <img src="jar.png" id="jar" alt="jar">
+
+  <!-- Center Content -->
+  <div class="center-box">
+    <h1>💌 A Message For You</h1>
+    <p>Some feelings don’t need words… they just need to be felt 💜</p>
+
+    <button id="revealBtn">Reveal a Reason 💖</button>
+
+    <!-- Card -->
+    <div id="card" class="hidden">
+      <p id="reasonText"></p>
+    </div>
   </div>
 
-  <!-- IMPORTANT: reasons first, then script -->
   <script src="reasons.js"></script>
   <script src="script.js"></script>
 
