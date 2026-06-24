@@ -1,3 +1,5 @@
+// ELEMENTS
+
 const music = document.getElementById("bgmusic");
 
 const enterBtn = document.getElementById("enterBtn");
@@ -12,11 +14,23 @@ const card = document.getElementById("card");
 
 const reasonText = document.getElementById("reasonText");
 
-/* ENTER WEBSITE */
+// ENTER WEBSITE
 
-enterBtn.addEventListener("click", () => {
+enterBtn.addEventListener("click", async () => {
 
-    music.play();
+    try {
+
+        music.volume = 0.6;
+
+        await music.play();
+
+        console.log("Music started");
+
+    } catch (err) {
+
+        console.log("Music failed:", err);
+
+    }
 
     welcomeScreen.style.opacity = "0";
 
@@ -26,34 +40,39 @@ enterBtn.addEventListener("click", () => {
 
         mainSite.style.display = "block";
 
-    }, 1000);
+    }, 800);
 
 });
 
-/* MUSIC TOGGLE */
+// MUSIC BUTTON
 
-function toggleMusic(){
+function toggleMusic() {
 
-    if(music.paused){
+    if (music.paused) {
 
-        music.play();
+        music.play()
+            .then(() => {
+                console.log("Music resumed");
+            })
+            .catch(err => {
+                console.log(err);
+            });
 
-    }else{
+    } else {
 
         music.pause();
 
     }
-
 }
 
-/* REASONS */
+// REVEAL REASON
 
 revealBtn.addEventListener("click", () => {
 
-    const random =
+    const randomReason =
         reasons[Math.floor(Math.random() * reasons.length)];
 
-    reasonText.innerText = random;
+    reasonText.innerText = randomReason;
 
     card.style.display = "block";
 
