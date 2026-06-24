@@ -14,23 +14,33 @@ const jar = document.getElementById("jar");
 
 const letter = document.getElementById("letter");
 
+const overlay = document.getElementById("magicOverlay");
+
 /* ENTER */
 
 enterBtn.addEventListener("click", async () => {
 
-    try {
-        await music.play();
-    } catch (e) {}
+```
+try {
 
-    welcomeScreen.style.opacity = "0";
+    await music.play();
 
-    setTimeout(() => {
+} catch (e) {
 
-        welcomeScreen.style.display = "none";
+    console.log("Music could not start automatically.");
 
-        mainSite.style.display = "block";
+}
 
-    }, 800);
+welcomeScreen.style.opacity = "0";
+
+setTimeout(() => {
+
+    welcomeScreen.style.display = "none";
+
+    mainSite.style.display = "block";
+
+}, 800);
+```
 
 });
 
@@ -38,15 +48,17 @@ enterBtn.addEventListener("click", async () => {
 
 function toggleMusic() {
 
-    if (music.paused) {
+```
+if (music.paused) {
 
-        music.play();
+    music.play();
 
-    } else {
+} else {
 
-        music.pause();
+    music.pause();
 
-    }
+}
+```
 
 }
 
@@ -54,129 +66,125 @@ function toggleMusic() {
 
 function createHeart() {
 
-    const heart = document.createElement("div");
+```
+const heart = document.createElement("div");
 
-    heart.classList.add("heart");
+heart.classList.add("heart");
 
-    heart.innerHTML = "💜";
+heart.innerHTML = "💜";
 
-    const rect = jar.getBoundingClientRect();
+const rect = jar.getBoundingClientRect();
 
-    heart.style.left = (rect.left + rect.width / 2) + "px";
+heart.style.left = (rect.left + rect.width / 2) + "px";
 
-    heart.style.top = rect.top + "px";
+heart.style.top = rect.top + "px";
 
-    document.body.appendChild(heart);
+document.body.appendChild(heart);
 
-    setTimeout(() => {
+setTimeout(() => {
 
-        heart.remove();
+    heart.remove();
 
-    }, 2500);
+}, 2500);
+```
 
 }
 
 function burstHearts() {
 
-    for(let i=0;i<15;i++){
+```
+for (let i = 0; i < 15; i++) {
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            createHeart();
+        createHeart();
 
-        }, i*100);
+    }, i * 100);
 
-    }
+}
+```
 
 }
 
 /* TYPEWRITER */
 
-function typeWriter(text){
+function typeWriter(text) {
 
-    reasonText.innerHTML = "";
+```
+reasonText.innerHTML = "";
 
-    let i = 0;
+let i = 0;
 
-    const interval = setInterval(() => {
+const interval = setInterval(() => {
 
-        if(i < text.length){
+    if (i < text.length) {
 
-            reasonText.innerHTML += text.charAt(i);
+        reasonText.innerHTML += text.charAt(i);
 
-            i++;
+        i++;
 
-        } else {
+    } else {
 
-            clearInterval(interval);
+        clearInterval(interval);
 
-        }
+    }
 
-    }, 25);
+}, 25);
+```
 
 }
 
-/* MAIN */
-
-const overlay =
-document.getElementById("magicOverlay");
+/* OPEN LETTER */
 
 revealBtn.addEventListener("click", () => {
 
-    const randomReason =
-        reasons[Math.floor(
-            Math.random() * reasons.length
-        )];
+```
+const randomReason =
+    reasons[Math.floor(Math.random() * reasons.length)];
 
-    jar.classList.add("shake");
-    jar.classList.add("jar-active");
+jar.classList.add("shake");
+
+jar.classList.add("jar-active");
+
+if (overlay) {
 
     overlay.classList.add("show");
 
-    burstHearts();
+}
 
-    setTimeout(() => {
+burstHearts();
 
-        jar.classList.remove("shake");
+setTimeout(() => {
 
-        letter.classList.add("show");
+    jar.classList.remove("shake");
 
-        typeWriter(
+    letter.classList.add("show");
+
+    typeWriter(
+```
+
 `Dear Lakku,
 
 ${randomReason}
 
 Love,
 Milind 💜`
-        );
+);
 
-    }, 700);
+```
+}, 700);
 
-    setTimeout(() => {
+setTimeout(() => {
+
+    jar.classList.remove("jar-active");
+
+    if (overlay) {
 
         overlay.classList.remove("show");
 
-        jar.classList.remove("jar-active");
+    }
 
-    }, 1800);
-
-});
-
-    const randomReason =
-        reasons[Math.floor(Math.random() * reasons.length)];
-
-    jar.classList.add("shake");
-
-    burstHearts();
-
-    setTimeout(() => {
-
-        jar.classList.remove("shake");
-
-        letter.classList.add("show");
-
-        typeWriter("Dear Lakku,\n\n" + randomReason + "\n\nLove,\nMilind 💜");
-
-    }, 700);
+}, 1800);
+```
 
 });
