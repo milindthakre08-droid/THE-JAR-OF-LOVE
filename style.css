@@ -440,3 +440,46 @@ font-style: italic;
     drop-shadow(0 0 30px #ffb3ff)
     drop-shadow(0 0 50px #ffffff);
 }
+/* ========================= */
+/* 💜 PERSONAL TOUCH UPGRADE */
+/* ========================= */
+
+/* soft handwritten vibe for the letter */
+#reasonText{
+    font-family: "Segoe Script", "Comic Sans MS", cursive;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #2b2b2b;
+}
+
+/* make letter feel like a real message card */
+#letter{
+    border: 1px solid rgba(0,0,0,0.08);
+    background: linear-gradient(145deg, #fffaf0, #fff3e6);
+}
+
+/* gentle glow around jar (like memory container) */
+#jar{
+    filter: drop-shadow(0 10px 25px rgba(160, 100, 255, 0.25));
+}
+
+/* subtle emotional breathing effect on center box */
+.center-box{
+    animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe{
+    0%{ transform: translate(-50%,-50%) scale(1); }
+    50%{ transform: translate(-50%,-50%) scale(1.01); }
+    100%{ transform: translate(-50%,-50%) scale(1); }
+}
+
+/* soft emotional background glow */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background: radial-gradient(circle at 50% 20%, rgba(255, 182, 193, 0.08), transparent 60%);
+    pointer-events:none;
+    z-index:0;
+}
