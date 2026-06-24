@@ -532,3 +532,103 @@ body::after{
     pointer-events:none;
     z-index:0;
 }
+/* ========================= */
+/* 🎬 FILM MODE UPGRADE */
+/* SAFE - NO BREAKING CHANGES */
+/* ========================= */
+
+/* cinematic dark overlay (film look) */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background: radial-gradient(circle at center,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.65)
+    );
+    z-index:0;
+    pointer-events:none;
+}
+
+/* subtle film grain effect */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity:0.05;
+    z-index:1;
+    pointer-events:none;
+    mix-blend-mode:overlay;
+}
+
+/* ensure content stays above film layer */
+#welcome-screen,
+#main-site{
+    position:relative;
+    z-index:2;
+}
+
+/* cinematic slow floating light haze */
+@keyframes filmFloat {
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:0.4;
+    }
+    50%{
+        opacity:0.7;
+    }
+    100%{
+        transform:translateY(-20px) scale(1.05);
+        opacity:0.4;
+    }
+}
+
+/* enhance center box like movie title card */
+.center-box{
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7) !important;
+    border: 1px solid rgba(255,255,255,0.06);
+    animation: filmFloat 6s ease-in-out infinite;
+}
+
+/* cinematic soft focus glow */
+#jar{
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    transition: 0.4s ease;
+}
+
+#jar:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 40px rgba(180,120,255,0.7));
+}
+
+/* dramatic button look (film UI style) */
+#revealBtn, #enterBtn, .music-btn{
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+#revealBtn:hover, #enterBtn:hover, .music-btn:hover{
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.15);
+}
+
+/* cinematic fade-in feel for letter */
+#letter.show{
+    animation: cinematicLetter 0.8s ease forwards;
+}
+
+@keyframes cinematicLetter{
+    from{
+        opacity:0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0) scale(1);
+    }
+}
