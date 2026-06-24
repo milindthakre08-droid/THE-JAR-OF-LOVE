@@ -365,3 +365,78 @@ font-style: italic;
 
 
 }
+/* MAGIC OVERLAY */
+
+#magicOverlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.35);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity .6s ease;
+
+    z-index: 5;
+}
+
+#magicOverlay.show {
+
+    opacity: 1;
+}
+
+/* DRAMATIC LETTER */
+
+#letter.show {
+
+    display: block;
+
+    animation: dramaticOpen .8s ease;
+}
+
+@keyframes dramaticOpen {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+        translateY(100px)
+        scale(.4)
+        rotate(-15deg);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+        translateY(-10px)
+        scale(1.05)
+        rotate(-2deg);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+        translateY(0)
+        scale(1)
+        rotate(-2deg);
+    }
+}
+
+/* EXTRA JAR GLOW */
+
+.jar-active {
+
+    filter:
+    drop-shadow(0 0 15px #d58cff)
+    drop-shadow(0 0 30px #ffb3ff)
+    drop-shadow(0 0 50px #ffffff);
+}
