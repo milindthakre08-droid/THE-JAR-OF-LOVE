@@ -593,3 +593,27 @@ body::after{
 #jar:active{
     transform: scale(0.98);
 }
+/* ========================= */
+/* 💜 HEART VISIBILITY FIX */
+/* ========================= */
+
+.heart{
+    position: fixed;
+    font-size: 26px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: heartFloat 2.2s linear forwards;
+    color: #ff4fd8;
+    text-shadow: 0 0 10px rgba(255, 79, 216, 0.6);
+}
+
+@keyframes heartFloat{
+    0%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-180px) scale(1.6);
+    }
+}
