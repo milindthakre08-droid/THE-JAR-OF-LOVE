@@ -483,3 +483,43 @@ body::after{
     pointer-events:none;
     z-index:0;
 }
+/* ========================= */
+/* ✨ SOFT UI IMPROVEMENT */
+/* SAFE - NO BREAKING CHANGES */
+/* ========================= */
+
+/* make center box slightly bigger */
+.center-box{
+    width: 90%;
+    max-width: 520px;
+    padding: 32px;
+}
+
+/* improve readability spacing */
+.center-box p{
+    line-height: 2.0;
+    letter-spacing: 0.3px;
+}
+
+/* make title feel less cramped */
+.center-box h1{
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+/* improve button spacing */
+#revealBtn{
+    margin-top: 25px;
+}
+
+/* letter spacing improvement */
+#reasonText{
+    line-height: 2.1;
+    letter-spacing: 0.4px;
+}
+
+/* footer breathing space */
+.footer-text{
+    margin-top: 18px;
+    line-height: 1.7;
+}
