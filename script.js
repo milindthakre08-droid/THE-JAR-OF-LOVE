@@ -1,56 +1,60 @@
-function toggleMusic() {
-  const music = document.getElementById("bgmusic");
+const music = document.getElementById("bgmusic");
 
-  if (music.paused) {
+const enterBtn = document.getElementById("enterBtn");
+
+const welcomeScreen = document.getElementById("welcome-screen");
+
+const mainSite = document.getElementById("main-site");
+
+const revealBtn = document.getElementById("revealBtn");
+
+const card = document.getElementById("card");
+
+const reasonText = document.getElementById("reasonText");
+
+/* ENTER WEBSITE */
+
+enterBtn.addEventListener("click", () => {
+
     music.play();
-  } else {
-    music.pause();
-  }
+
+    welcomeScreen.style.opacity = "0";
+
+    setTimeout(() => {
+
+        welcomeScreen.style.display = "none";
+
+        mainSite.style.display = "block";
+
+    }, 1000);
+
+});
+
+/* MUSIC TOGGLE */
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+    }else{
+
+        music.pause();
+
+    }
+
 }
 
-/* HEARTS */
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerText = "💖";
+/* REASONS */
 
-  heart.style.left = Math.random() * window.innerWidth + "px";
-  heart.style.top = window.innerHeight + "px";
+revealBtn.addEventListener("click", () => {
 
-  document.body.appendChild(heart);
+    const random =
+        reasons[Math.floor(Math.random() * reasons.length)];
 
-  setTimeout(() => heart.remove(), 2000);
-}
+    reasonText.innerText = random;
 
-function heartBurst() {
-  for (let i = 0; i < 15; i++) {
-    setTimeout(createHeart, i * 70);
-  }
-}
+    card.style.display = "block";
 
-/* MAIN */
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("revealBtn");
-  const card = document.getElementById("card");
-  const text = document.getElementById("reasonText");
-
-  const music = document.getElementById("bgmusic");
-
-  /* autoplay attempt */
-  music.play().catch(() => {
-    console.log("Autoplay blocked");
-  });
-
-  btn.addEventListener("click", () => {
-    const random = reasons[Math.floor(Math.random() * reasons.length)];
-
-    text.innerText = "💖 " + random;
-
-    card.classList.remove("hidden");
-    card.classList.remove("pop");
-    void card.offsetWidth; // restart animation
-    card.classList.add("pop");
-
-    heartBurst();
-  });
 });
