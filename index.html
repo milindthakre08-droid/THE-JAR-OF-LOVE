@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,73 +12,105 @@
 <body>
 
 <!-- MUSIC -->
+
 <audio id="bgmusic" preload="auto" loop>
     <source src="music.m4a" type="audio/mp4">
 </audio>
 
 <!-- WELCOME SCREEN -->
+
 <div id="welcome-screen">
 
-    <div class="welcome-content">
+```
+<div class="welcome-content">
 
-        <h1>A Little Corner of Us 💜</h1>
+    <h1>A Little Corner of Us 💜</h1>
 
-        <p>
-            Made by Milind, for Lakku.
-            <br><br>
-            Whenever you miss me,
-            visit this little place.
-            <br><br>
-            Inside are little pieces of my heart,
-            saved here for you to discover.
-        </p>
+    <p>
+        Made by Milind, for Lakku 💜
+        <br><br>
 
-        <button id="enterBtn">
-            ✨ Enter
-        </button>
+        Whenever you miss me,
+        visit this little place.
 
-    </div>
+        <br><br>
+
+        Inside are little pieces of my heart,
+        saved here for you to discover.
+
+        <br><br>
+
+        And whenever you open it,
+        remember that somewhere,
+        someone is thinking about you.
+    </p>
+
+    <button id="enterBtn">
+        ✨ Enter
+    </button>
+
+</div>
+```
 
 </div>
 
 <!-- MAIN WEBSITE -->
+
 <div id="main-site">
 
-    <button class="music-btn" onclick="toggleMusic()">
-        🔊 Music
+```
+<!-- MUSIC BUTTON -->
+
+<button class="music-btn" onclick="toggleMusic()">
+    🎵 Music
+</button>
+
+<!-- JAR -->
+
+<img src="jar.png" id="jar" alt="Love Jar">
+
+<!-- MAIN CARD -->
+
+<div class="center-box">
+
+    <h1>💌 A Gift For You</h1>
+
+    <p>
+        Open the jar and discover
+        one of the many little things
+        I wish I could tell you every day.
+    </p>
+
+    <button id="revealBtn">
+        💌 Open Today's Note
     </button>
 
-    <img src="jar.png" id="jar" alt="Jar">
+    <!-- LETTER -->
 
-    <div class="center-box">
+    <div id="letter">
 
-        <h1>💌 A Gift For You</h1>
+        <div id="reasonText"></div>
 
-        <p>
-            This is a gift from Milind to Lakku 💜
-            <br>
-            You can open it every day and remember me ✨
-        </p>
+        <div class="footer-text">
 
-        <button id="revealBtn">
-            Reveal a Reason 💖
-        </button>
+            These are only a few of the countless reasons
+            you mean so much to me.
 
-        <div id="card">
+            <br><br>
 
-            <p id="reasonText"></p>
-
-            <p class="footer-text">
-                These are only a glimpse of my love for you 💜
-            </p>
+            — Milind 💜
 
         </div>
 
     </div>
 
 </div>
+```
+
+</div>
 
 <script src="reasons.js"></script>
+
 <script src="script.js"></script>
 
 </body>
