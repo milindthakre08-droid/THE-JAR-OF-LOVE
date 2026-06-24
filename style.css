@@ -1,111 +1,193 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  background: url("background.png") no-repeat center center;
-  background-size: cover;
-  font-family: Arial, sans-serif;
+body{
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+
+    font-family: Arial, sans-serif;
+
+    background-image:url("./background.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* WELCOME SCREEN */
+
+#welcome-screen{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.55);
+
+    z-index:1000;
+
+    transition:1s;
+}
+
+.welcome-content{
+    text-align:center;
+    color:white;
+
+    width:85%;
+    max-width:500px;
+
+    padding:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+}
+
+.welcome-content h1{
+    margin-bottom:20px;
+}
+
+.welcome-content p{
+    line-height:1.8;
+}
+
+#enterBtn{
+    margin-top:25px;
+
+    border:none;
+    border-radius:30px;
+
+    padding:12px 25px;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+/* MAIN SITE */
+
+#main-site{
+    display:none;
+    width:100%;
+    height:100%;
 }
 
 /* MUSIC BUTTON */
-.music-btn {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  padding: 10px 14px;
-  border-radius: 20px;
-  border: none;
-  background: rgba(255,255,255,0.25);
-  color: white;
-  backdrop-filter: blur(6px);
-  cursor: pointer;
+
+.music-btn{
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    z-index:50;
 }
 
-/* 🫙 BIGGER JAR */
-#jar {
-  position: absolute;
-  left: 25px;
-  bottom: 20px;
-  width: 220px;   /* increased size */
-  cursor: pointer;
-  animation: float 3s ease-in-out infinite;
+/* JAR */
+
+#jar{
+    position:absolute;
+
+    left:25px;
+    bottom:25px;
+
+    width:240px;
+
+    animation:float 3s infinite ease-in-out;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
 }
 
 /* CENTER BOX */
-.center-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
 
-  background: rgba(0,0,0,0.35);
-  padding: 25px;
-  border-radius: 20px;
-  backdrop-filter: blur(8px);
-  width: 80%;
-  max-width: 420px;
+.center-box{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:85%;
+    max-width:450px;
+
+    text-align:center;
+
+    color:white;
+
+    padding:25px;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
 }
 
 /* BUTTON */
-#revealBtn {
-  margin-top: 15px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 20px;
-  background: pink;
-  font-weight: bold;
-  cursor: pointer;
+
+#revealBtn{
+    margin-top:20px;
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:25px;
+
+    cursor:pointer;
 }
 
-/* 💖 POP CARD */
-#card {
-  margin-top: 15px;
-  padding: 15px;
-  border-radius: 15px;
-  background: white;
-  color: black;
+/* CARD */
+
+#card{
+    margin-top:20px;
+
+    display:none;
+
+    background:white;
+
+    color:black;
+
+    padding:15px;
+
+    border-radius:15px;
 }
 
-/* POP ANIMATION */
-.pop {
-  animation: popEffect 0.5s ease;
+.footer-text{
+    margin-top:10px;
+
+    color:gray;
+
+    font-size:12px;
 }
 
-@keyframes popEffect {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
+/* MOBILE */
 
-/* FOOTER */
-.footer-text {
-  margin-top: 10px;
-  font-size: 12px;
-  color: gray;
-}
+@media(max-width:600px){
 
-/* HEARTS */
-.heart {
-  position: absolute;
-  color: pink;
-  font-size: 20px;
-  animation: floatUp 2s linear forwards;
-}
+    #jar{
+        width:160px;
+    }
 
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1); opacity: 1; }
-  100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
 }
