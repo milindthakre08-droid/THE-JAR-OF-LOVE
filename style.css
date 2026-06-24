@@ -189,5 +189,179 @@ body{
     #jar{
         width:160px;
     }
+    /* ========================= */
+/* LOVE LETTER UPGRADE */
+/* ========================= */
+
+#letter {
+
+```
+display: none;
+
+margin-top: 20px;
+
+background: #fffaf0;
+
+color: #333;
+
+padding: 25px;
+
+border-radius: 18px;
+
+box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+text-align: left;
+
+white-space: pre-line;
+
+transform: rotate(-2deg);
+
+line-height: 1.8;
+
+font-size: 16px;
+```
+
+}
+
+#letter.show {
+
+```
+display: block;
+
+animation: letterOpen .6s ease;
+```
+
+}
+
+@keyframes letterOpen {
+
+```
+from {
+
+    transform: scale(.5) rotate(-10deg);
+
+    opacity: 0;
+}
+
+to {
+
+    transform: scale(1) rotate(-2deg);
+
+    opacity: 1;
+}
+```
+
+}
+
+/* ========================= */
+/* JAR GLOW */
+/* ========================= */
+
+#jar {
+
+```
+transition: .3s ease;
+```
+
+}
+
+#jar:hover {
+
+```
+filter: drop-shadow(0 0 25px #d58cff);
+```
+
+}
+
+/* ========================= */
+/* JAR SHAKE */
+/* ========================= */
+
+.shake {
+
+```
+animation: shake .6s;
+```
+
+}
+
+@keyframes shake {
+
+```
+0% { transform: rotate(0deg); }
+
+20% { transform: rotate(-5deg); }
+
+40% { transform: rotate(5deg); }
+
+60% { transform: rotate(-5deg); }
+
+80% { transform: rotate(5deg); }
+
+100% { transform: rotate(0deg); }
+```
+
+}
+
+/* ========================= */
+/* HEARTS */
+/* ========================= */
+
+.heart {
+
+```
+position: fixed;
+
+font-size: 24px;
+
+pointer-events: none;
+
+z-index: 999;
+
+animation: heartFloat 2.5s linear forwards;
+```
+
+}
+
+@keyframes heartFloat {
+
+```
+0% {
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+}
+
+100% {
+
+    opacity: 0;
+
+    transform: translateY(-250px) scale(1.8);
+}
+```
+
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer-text {
+
+```
+margin-top: 15px;
+
+color: #666;
+
+text-align: center;
+
+font-size: 13px;
+
+font-style: italic;
+```
+
+}
+
 
 }
