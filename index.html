@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Little Corner of Us 💜</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Corner of Us 💜</title>
 
-```
 <link rel="stylesheet" href="style.css">
-```
-
 </head>
 
 <body>
 
-```
 <!-- MUSIC -->
 
 <audio id="bgmusic" preload="auto" loop>
@@ -26,34 +21,36 @@
 
 <div id="welcome-screen">
 
-    <div class="welcome-content">
+```
+<div class="welcome-content">
 
-        <h1>A Little Corner of Us 💜</h1>
+    <h1>A Little Corner of Us 💜</h1>
 
-        <p>
-            Made by Milind, for Lakku 💜
-            <br><br>
+    <p>
+        Made by Milind, for Lakku 💜
+        <br><br>
 
-            Whenever you miss me,
-            visit this little place.
+        Whenever you miss me,
+        visit this little place.
 
-            <br><br>
+        <br><br>
 
-            Inside are little pieces of my heart,
-            saved here for you to discover.
+        Inside are little pieces of my heart,
+        saved here for you to discover.
 
-            <br><br>
+        <br><br>
 
-            And whenever you open it,
-            remember that somewhere,
-            someone is thinking about you.
-        </p>
+        And whenever you open it,
+        remember that somewhere,
+        someone is thinking about you.
+    </p>
 
-        <button id="enterBtn">
-            ✨ Enter
-        </button>
+    <button id="enterBtn">
+        ✨ Enter
+    </button>
 
-    </div>
+</div>
+```
 
 </div>
 
@@ -61,53 +58,60 @@
 
 <div id="main-site">
 
-    <div id="magicOverlay"></div>
+```
+<!-- MUSIC BUTTON -->
 
-    <button class="music-btn" onclick="toggleMusic()">
-        🎵 Music
+<button class="music-btn" onclick="toggleMusic()">
+    🎵 Music
+</button>
+
+<!-- JAR -->
+
+<img src="jar.png" id="jar" alt="Love Jar">
+
+<!-- MAIN CARD -->
+
+<div class="center-box">
+
+    <h1>💌 A Gift For You</h1>
+
+    <p>
+        Open the jar and discover
+        one of the many little things
+        I wish I could tell you every day.
+    </p>
+
+    <button id="revealBtn">
+        💌 Open Today's Note
     </button>
 
-    <img src="jar.png" id="jar" alt="Love Jar">
+    <!-- LETTER -->
 
-    <div class="center-box">
+    <div id="letter">
 
-        <h1>💌 A Gift For You</h1>
+        <div id="reasonText"></div>
 
-        <p>
-            Open the jar and discover
-            one of the many little things
-            I wish I could tell you every day.
-        </p>
+        <div class="footer-text">
 
-        <button id="revealBtn">
-            💌 Open Today's Note
-        </button>
+            These are only a few of the countless reasons
+            you mean so much to me.
 
-        <div id="letter">
+            <br><br>
 
-            <div id="reasonText"></div>
-
-            <div class="footer-text">
-
-                These are only a few of the countless reasons
-                you mean so much to me.
-
-                <br><br>
-
-                — Milind 💜
-
-            </div>
+            — Milind 💜
 
         </div>
 
     </div>
 
 </div>
-
-<script src="reasons.js"></script>
-<script src="script.js"></script>
 ```
 
-</body>
+</div>
 
+<script src="reasons.js"></script>
+
+<script src="script.js"></script>
+
+</body>
 </html>
