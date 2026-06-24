@@ -1,21 +1,15 @@
 const music = document.getElementById("bgmusic");
-
 const enterBtn = document.getElementById("enterBtn");
-
 const welcomeScreen = document.getElementById("welcome-screen");
-
 const mainSite = document.getElementById("main-site");
 
 const revealBtn = document.getElementById("revealBtn");
-
 const reasonText = document.getElementById("reasonText");
-
 const jar = document.getElementById("jar");
-
 const letter = document.getElementById("letter");
+const overlay = document.getElementById("magicOverlay");
 
 /* ENTER */
-
 enterBtn.addEventListener("click", async () => {
 
     try {
@@ -25,74 +19,45 @@ enterBtn.addEventListener("click", async () => {
     welcomeScreen.style.opacity = "0";
 
     setTimeout(() => {
-
         welcomeScreen.style.display = "none";
-
         mainSite.style.display = "block";
-
     }, 800);
 
 });
 
 /* MUSIC */
-
 function toggleMusic() {
-
     if (music.paused) {
-
         music.play();
-
     } else {
-
         music.pause();
-
     }
-
 }
 
 /* HEARTS */
-
 function createHeart() {
-
     const heart = document.createElement("div");
-
     heart.classList.add("heart");
-
     heart.innerHTML = "💜";
 
     const rect = jar.getBoundingClientRect();
 
     heart.style.left = (rect.left + rect.width / 2) + "px";
-
     heart.style.top = rect.top + "px";
 
     document.body.appendChild(heart);
 
-    setTimeout(() => {
-
-        heart.remove();
-
-    }, 2500);
-
+    setTimeout(() => heart.remove(), 2500);
 }
 
 function burstHearts() {
-
-    for(let i=0;i<15;i++){
-
-        setTimeout(() => {
-
-            createHeart();
-
-        }, i*100);
-
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 100);
     }
-
 }
 
 /* TYPEWRITER */
-
-function typeWriter(text){
+function typeWriter(text) {
 
     reasonText.innerHTML = "";
 
@@ -100,38 +65,26 @@ function typeWriter(text){
 
     const interval = setInterval(() => {
 
-        if(i < text.length){
-
+        if (i < text.length) {
             reasonText.innerHTML += text.charAt(i);
-
             i++;
-
         } else {
-
             clearInterval(interval);
-
         }
 
     }, 25);
-
 }
 
-/* MAIN */
-
-const overlay =
-document.getElementById("magicOverlay");
-
+/* REVEAL */
 revealBtn.addEventListener("click", () => {
 
     const randomReason =
-        reasons[Math.floor(
-            Math.random() * reasons.length
-        )];
+        reasons[Math.floor(Math.random() * reasons.length)];
 
     jar.classList.add("shake");
     jar.classList.add("jar-active");
 
-    overlay.classList.add("show");
+    if (overlay) overlay.classList.add("show");
 
     burstHearts();
 
@@ -154,29 +107,10 @@ Milind 💜`
 
     setTimeout(() => {
 
-        overlay.classList.remove("show");
+        if (overlay) overlay.classList.remove("show");
 
         jar.classList.remove("jar-active");
 
     }, 1800);
-
-});
-
-    const randomReason =
-        reasons[Math.floor(Math.random() * reasons.length)];
-
-    jar.classList.add("shake");
-
-    burstHearts();
-
-    setTimeout(() => {
-
-        jar.classList.remove("shake");
-
-        letter.classList.add("show");
-
-        typeWriter("Dear Lakku,\n\n" + randomReason + "\n\nLove,\nMilind 💜");
-
-    }, 700);
 
 });
