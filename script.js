@@ -12,6 +12,10 @@ const overlay = document.getElementById("magicOverlay");
 /* 🫙 MEMORY VAULT GLOW */
 const vaultGlow = document.getElementById("vaultGlow");
 
+/* 🧠 365 MEMORY INDEX (NEW SAFE UPGRADE) */
+let jarIndex = localStorage.getItem("jarIndex");
+jarIndex = jarIndex ? parseInt(jarIndex) : 0;
+
 /* ENTER */
 enterBtn.addEventListener("click", async () => {
 
@@ -78,11 +82,19 @@ function typeWriter(text) {
     }, 25);
 }
 
-/* REVEAL */
+/* REVEAL (UPGRADED LOGIC — NO RANDOM NOW) */
 revealBtn.addEventListener("click", () => {
 
-    const randomReason =
-        reasons[Math.floor(Math.random() * reasons.length)];
+    /* 🫙 SAFE 365 SEQUENTIAL REASON */
+    const reasonTextValue = reasons[jarIndex];
+
+    jarIndex++;
+
+    if (jarIndex >= reasons.length) {
+        jarIndex = 0;
+    }
+
+    localStorage.setItem("jarIndex", jarIndex);
 
     jar.classList.add("shake");
     jar.classList.add("jar-active");
@@ -103,7 +115,7 @@ revealBtn.addEventListener("click", () => {
         typeWriter(
 `Dear Lakku,
 
-${randomReason}
+${reasonTextValue}
 
 Love,
 Milind 💜`
