@@ -118,7 +118,49 @@ function typeWriter(text){
 
 /* MAIN */
 
+const overlay =
+document.getElementById("magicOverlay");
+
 revealBtn.addEventListener("click", () => {
+
+    const randomReason =
+        reasons[Math.floor(
+            Math.random() * reasons.length
+        )];
+
+    jar.classList.add("shake");
+    jar.classList.add("jar-active");
+
+    overlay.classList.add("show");
+
+    burstHearts();
+
+    setTimeout(() => {
+
+        jar.classList.remove("shake");
+
+        letter.classList.add("show");
+
+        typeWriter(
+`Dear Lakku,
+
+${randomReason}
+
+Love,
+Milind 💜`
+        );
+
+    }, 700);
+
+    setTimeout(() => {
+
+        overlay.classList.remove("show");
+
+        jar.classList.remove("jar-active");
+
+    }, 1800);
+
+});
 
     const randomReason =
         reasons[Math.floor(Math.random() * reasons.length)];
