@@ -9,6 +9,9 @@ const jar = document.getElementById("jar");
 const letter = document.getElementById("letter");
 const overlay = document.getElementById("magicOverlay");
 
+/* 🫙 MEMORY VAULT GLOW */
+const vaultGlow = document.getElementById("vaultGlow");
+
 /* ENTER */
 enterBtn.addEventListener("click", async () => {
 
@@ -86,6 +89,9 @@ revealBtn.addEventListener("click", () => {
 
     if (overlay) overlay.classList.add("show");
 
+    /* 🫙 MEMORY VAULT EFFECT ON */
+    if (vaultGlow) vaultGlow.classList.add("show");
+
     burstHearts();
 
     setTimeout(() => {
@@ -110,6 +116,9 @@ Milind 💜`
         if (overlay) overlay.classList.remove("show");
 
         jar.classList.remove("jar-active");
+
+        /* 🫙 MEMORY VAULT EFFECT OFF */
+        if (vaultGlow) vaultGlow.classList.remove("show");
 
     }, 1800);
 
