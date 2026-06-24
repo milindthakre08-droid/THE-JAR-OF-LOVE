@@ -1,35 +1,26 @@
-// ELEMENTS
-
 const music = document.getElementById("bgmusic");
+
 const enterBtn = document.getElementById("enterBtn");
+
 const welcomeScreen = document.getElementById("welcome-screen");
+
 const mainSite = document.getElementById("main-site");
 
 const revealBtn = document.getElementById("revealBtn");
 
 const reasonText = document.getElementById("reasonText");
+
 const jar = document.getElementById("jar");
+
 const letter = document.getElementById("letter");
 
-// ====================
-// ENTER WEBSITE
-// ====================
+/* ENTER */
 
 enterBtn.addEventListener("click", async () => {
 
     try {
-
-        music.volume = 0.6;
-
         await music.play();
-
-        console.log("Music started");
-
-    } catch (err) {
-
-        console.log("Music failed:", err);
-
-    }
+    } catch (e) {}
 
     welcomeScreen.style.opacity = "0";
 
@@ -43,21 +34,13 @@ enterBtn.addEventListener("click", async () => {
 
 });
 
-// ====================
-// MUSIC BUTTON
-// ====================
+/* MUSIC */
 
 function toggleMusic() {
 
     if (music.paused) {
 
-        music.play()
-            .then(() => {
-                console.log("Music resumed");
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        music.play();
 
     } else {
 
@@ -67,9 +50,7 @@ function toggleMusic() {
 
 }
 
-// ====================
-// HEARTS
-// ====================
+/* HEARTS */
 
 function createHeart() {
 
@@ -81,11 +62,9 @@ function createHeart() {
 
     const rect = jar.getBoundingClientRect();
 
-    heart.style.left =
-        (rect.left + rect.width / 2) + "px";
+    heart.style.left = (rect.left + rect.width / 2) + "px";
 
-    heart.style.top =
-        (rect.top + 20) + "px";
+    heart.style.top = rect.top + "px";
 
     document.body.appendChild(heart);
 
@@ -99,23 +78,21 @@ function createHeart() {
 
 function burstHearts() {
 
-    for (let i = 0; i < 15; i++) {
+    for(let i=0;i<15;i++){
 
         setTimeout(() => {
 
             createHeart();
 
-        }, i * 100);
+        }, i*100);
 
     }
 
 }
 
-// ====================
-// TYPEWRITER EFFECT
-// ====================
+/* TYPEWRITER */
 
-function typeWriter(text) {
+function typeWriter(text){
 
     reasonText.innerHTML = "";
 
@@ -123,7 +100,7 @@ function typeWriter(text) {
 
     const interval = setInterval(() => {
 
-        if (i < text.length) {
+        if(i < text.length){
 
             reasonText.innerHTML += text.charAt(i);
 
@@ -139,11 +116,51 @@ function typeWriter(text) {
 
 }
 
-// ====================
-// OPEN LETTER
-// ====================
+/* MAIN */
+
+const overlay =
+document.getElementById("magicOverlay");
 
 revealBtn.addEventListener("click", () => {
+
+    const randomReason =
+        reasons[Math.floor(
+            Math.random() * reasons.length
+        )];
+
+    jar.classList.add("shake");
+    jar.classList.add("jar-active");
+
+    overlay.classList.add("show");
+
+    burstHearts();
+
+    setTimeout(() => {
+
+        jar.classList.remove("shake");
+
+        letter.classList.add("show");
+
+        typeWriter(
+`Dear Lakku,
+
+${randomReason}
+
+Love,
+Milind 💜`
+        );
+
+    }, 700);
+
+    setTimeout(() => {
+
+        overlay.classList.remove("show");
+
+        jar.classList.remove("jar-active");
+
+    }, 1800);
+
+});
 
     const randomReason =
         reasons[Math.floor(Math.random() * reasons.length)];
@@ -158,12 +175,7 @@ revealBtn.addEventListener("click", () => {
 
         letter.classList.add("show");
 
-        const message =
-            "Dear Lakku,\n\n" +
-            randomReason +
-            "\n\nLove,\nMilind 💜";
-
-        typeWriter(message);
+        typeWriter("Dear Lakku,\n\n" + randomReason + "\n\nLove,\nMilind 💜");
 
     }, 700);
 
